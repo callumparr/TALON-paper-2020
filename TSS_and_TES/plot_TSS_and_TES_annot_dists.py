@@ -208,8 +208,8 @@ def main():
 
     # Remove spikes unless requested to keep
     if options.spikes == False:
-         data = data[~data.chrom.str.contains("SIRV")]
-         data = data[~data.chrom.str.contains("ERCC")]  
+         data = data[~data.chrom.str.contains("SIRV", na = False)] # Prevents float error from mixed datatypes from chr index
+         data = data[~data.chrom.str.contains("ERCC", na = False)] # Prevents float error from mixed datatypes from chr index 
 
     # Limit to known transcripts
     data = data.loc[data.transcript_novelty == "Known"]   

@@ -119,8 +119,8 @@ def main():
 	df = df.loc[df.transcript_novelty == 'Known']
 
 	# remove SIRVs and ERCCs and chrM
-	df = df.loc[~df.chrom.str.contains('SIRV')]
-	df = df.loc[~df.chrom.str.contains('ERCC')]
+	df = df.loc[~df.chrom.str.contains('SIRV', na = False)] # Prevents float error from mixed datatypes from chr index
+	df = df.loc[~df.chrom.str.contains('ERCC', na = False)] # Prevents float error from mixed datatypes from chr index
 	df = df.loc[df.chrom != 'chrM']
 
 	# only look at multiexonic things, which are transcripts

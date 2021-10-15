@@ -111,9 +111,9 @@ def main():
         
 
     # Remove SIRV/ERCCs
-    filter = data['chrom'].str.contains("ERCC")
+    filter = data['chrom'].str.contains("ERCC", na = False) # Prevents float error from mixed datatypes from chr index
     data = data[~filter]
-    filter = data['chrom'].str.contains("SIRV")
+    filter = data['chrom'].str.contains("SIRV", na = False) # Prevents float error from mixed datatypes from chr index
     data = data[~filter]
 
     # Now apply the whitelist
