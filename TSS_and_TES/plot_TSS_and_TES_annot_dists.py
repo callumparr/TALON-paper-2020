@@ -1,4 +1,5 @@
 import pandas as pd
+pd.options.mode.chained_assignment = None  # default='warn' prevents output of some error message to stdout.
 from optparse import OptionParser
 import seaborn as sns
 import numpy as np
