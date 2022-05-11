@@ -10,7 +10,7 @@ main <-function() {
                                   col_names = TRUE, trim_ws = TRUE, na = "NA"))
 
     # Remove genomic transcripts
-    abundance_table <- subset(abundance_table, transcript_novelty != "Genomic")
+#    abundance_table <- subset(abundance_table, transcript_novelty != "Genomic") # Ommit to allow Genomic novelty
 
     # Filter the results to limit them to selected datasets
     datasets <- unlist(strsplit(datasets, ","))
