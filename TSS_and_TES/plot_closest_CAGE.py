@@ -32,7 +32,7 @@ def plot_histogram(data, xvar, label, xmax, ymax, fname):
     med = round(np.median(x), 1)
 
     style = dict(size=12, color='black')
-    plt.axvline(med, linestyle = '--', color = 'lightgrey')
+   # plt.axvline(med, linestyle = '--', color = 'lightgrey') # ommit midline as it is obscuring the major peak from plotting.
 
     ax.text(med + 50, ymax*7/8, "Median: " + str(med) + " bp", **style)
 
